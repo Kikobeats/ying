@@ -1,6 +1,6 @@
 <aside class="cover">
 
-  <div class="cover container">
+  <div class="cover container" {{#if @blog.cover}} style="background-image: url({{@blog.cover}})"{{/if}}>
     <div class="profile">
       {{#if @blog.logo}}
       <a id="avatar-link" title="link to homepage for {{@blog.title}}" href="{{@blog.url}}/#open">
