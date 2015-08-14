@@ -13,6 +13,8 @@ $ ->
     method = if options.toggle is 'hide' then 'addClass' else 'toggleClass'
     $('.cover')[method] 'expanded'
     $('.link-item')[method] 'expanded'
+    # // manage scroll visibility
+    $('.main').css 'overflow' if $('.cover').hasClass 'expanded' then 'hidden' else 'auto'
     Uno.search.form options.form if options.form?
 
   $('#blog-button, #avatar-link').click ->
