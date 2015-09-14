@@ -3,7 +3,7 @@
 // ------------------------------
 
 @media only screen and (min-width:1824px) {
-  main {
+  .main {
     padding: 2.5rem 11rem;
   }
   .content {
@@ -18,16 +18,11 @@
   /* disabling element, too much information*/
   .pace,
   .post.reading-time,
-  .post.related {
+  #back-button {
     display: none;
   }
   #search-container {
     display: none !important;
-  }
-
-  /* Enable element special for little devices */
-  #profile-resume {
-    display: inherit;
   }
 
   /* off canvas */
@@ -38,6 +33,7 @@
     z-index: 999;
 
     display: block;
+    transition: top $aside-animation-time;
 
     transition: all $aside-animation-time;
     &.expanded {
@@ -45,29 +41,23 @@
     }
     > a {
       > i {
-        color: $hover-color;
+        left: -12px;
+        opacity: 0.8;
       }
     }
   }
   .cover {
-    width: 16rem;
-
-    transition: all $aside-animation-time;
-    transform: translate3d(-16rem, 0, 0);
-    &.expanded {
-      width: 16rem;
-
-      transform: translate3d(0, 0, 0);
-    }
-    &.animated {
-      transition: all $aside-animation-time;
-    }
+    width: 100%;
+    position: fixed;
+    transition: height $aside-animation-time;
+    transform: translate3d(0, 0, 0);
+    height: 50%;
+    z-index: 10;
   }
   .profile {
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    overflow: hidden;
+    margin-top: 1rem;
     &.contact {
       > nav {
         padding: 0;
@@ -79,9 +69,6 @@
         margin-bottom: 1rem;
       }
     }
-    > p {
-      display: none;
-    }
     .divider {
       display: none;
     }
@@ -89,13 +76,8 @@
   .link-item {
     padding: .85rem 1.25rem;
     margin: 0;
-
-    font-size: 1rem;
-
     border-radius: 0;
-    &:hover {
-      background-color: rgba($black, .1);
-    }
+    padding: .625rem 1.25rem;
   }
   #avatar-link {
     display: inline-block;
@@ -107,18 +89,34 @@
       margin: 0;
     }
     &.left {
+      display:none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 3rem 0 !important;
+      background-color: $mobile-primary;
+      height: 100%;
+      margin: 0;
+      z-index: 20;
+
       .links.item {
         width: 100%;
       }
     }
   }
-  main {
+  .main {
     left: 0;
 
     transition: all $aside-animation-time;
     transform: translate3d(0, 0, 0);
-    &.expanded {
-      transform: translate3d(14rem, 0, 0);
+    position: relative;
+    z-index: 15;
+    background: #fff;
+    margin-top: 40%;
+
+    > .content {
+      padding: 1rem;
     }
   }
 }
@@ -127,12 +125,32 @@
 // ------------------------------
 
 @media all and (max-width:480px) {
+  .profile {
+    > a {
+      > h1 {
+        font-size: 1.25rem;
+      }
+
+      > h3 {
+        font-size: 1rem;
+      }
+    }
+
+    > p {
+      max-height: 4.6rem;
+      overflow: hidden;
+    }
+  }
   .btn {
     display: block;
     margin-bottom: .4em;
   }
-  main {
+  .cover {
+    height: 70%;
+  }
+  .main {
     padding: 1rem 0;
+    margin-top: 100%;
   }
   .mayday {
     width: auto;
