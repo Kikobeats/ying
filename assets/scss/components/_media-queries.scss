@@ -3,7 +3,7 @@
 // ------------------------------
 
 @media only screen and (min-width:1824px) {
-  .main {
+  main {
     padding: 2.5rem 11rem;
   }
   .content {
@@ -28,8 +28,8 @@
   /* off canvas */
   #menu-button {
     position: fixed;
-    top: .5rem;
-    left: 13.5rem;
+    top: 0;
+    left: 1.5rem;
     z-index: 999;
 
     display: block;
@@ -37,7 +37,12 @@
 
     transition: all $aside-animation-time;
     &.expanded {
-      left: .85rem;
+      > a {
+        > i {
+          color: $hover-color;
+          opacity: 1;
+        }
+      }
     }
     > a {
       > i {
@@ -65,8 +70,7 @@
     }
     > a {
       > img {
-        width: 8rem;
-        margin-bottom: 1rem;
+        width: 6rem;
       }
     }
     .divider {
@@ -74,14 +78,13 @@
     }
   }
   .link-item {
-    padding: .85rem 1.25rem;
     margin: 0;
     border-radius: 0;
     padding: .625rem 1.25rem;
   }
   #avatar-link {
     display: inline-block;
-    margin-top: 4rem;
+    margin-top: 1rem;
   }
   .navigation {
     width: 100%;
@@ -105,7 +108,7 @@
       }
     }
   }
-  .main {
+  main {
     left: 0;
 
     transition: all $aside-animation-time;
@@ -148,7 +151,7 @@
   .cover {
     height: 70%;
   }
-  .main {
+  main {
     padding: 1rem 0;
     margin-top: 100%;
   }
