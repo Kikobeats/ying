@@ -18,8 +18,21 @@ $ ->
     return $('#menu-button').trigger 'click' unless Uno.is 'device', 'desktop'
     _expand form: 'toggle'
 
-  $("#menu-button").click ->
-    $('main, .cover, #menu-button').toggleClass 'expanded'
+  $("#menu-button").click (e)->
+    if $(e.currentTarget).hasClass 'expanded'
+      $('html,body').animate({scrollTop:0})
+    $('nav.navigation.left').toggle 'slideUp'
+    $('#menu-button').toggleClass 'expanded'
+
+  # // Close menu on scroll down
+  unless Uno.is 'device', 'desktop'
+    old = $(document).scrollTop();
+    $(document).on 'scroll', (e)->
+      if !($("#menu-button").hasClass 'expanded') && (old < $(document).scrollTop())
+        $('nav.navigation.left').hide 'slideUp'
+        $("#menu-button").addClass 'expanded'
+
+      old = $(document).scrollTop();
 
   if (Uno.is 'device', 'desktop') and (Uno.is 'page', 'home')
     _animate()
