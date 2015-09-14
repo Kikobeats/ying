@@ -3,7 +3,7 @@
 // ------------------------------
 
 @media only screen and (min-width:1824px) {
-  main {
+  .main {
     padding: 2.5rem 11rem;
   }
   .content {
@@ -19,55 +19,50 @@
   /* disabling element, too much information*/
   .pace,
   .post.reading-time,
-  .post.related {
+  #back-button {
     display: none;
   }
   #search-container {
     display: none !important;
   }
 
-  /* Enable element special for little devices */
-  #profile-resume {
-    display: inherit;
-  }
-
   /* off canvas */
   #menu-button {
     position: fixed;
-    top: .5rem;
-    left: 14rem;
+    top: 0;
+    left: 1.5rem;
     z-index: 999;
     display: block;
-    transition: all $aside-animation-time;
+    transition: top $aside-animation-time;
 
     &.expanded {
-      left: 1.5rem;
+      > a {
+        > i {
+          color: $hover-color;
+          opacity: 1;
+        }
+      }
     }
     > a {
       > i {
-        color: $hover-color;
+        left: -12px;
+        opacity: 0.8;
       }
     }
   }
   .cover {
-    width: 16rem;
-    background: $mobile-primary;
-    transition: all $aside-animation-time;
-    transform: translate3d(-16rem, 0, 0);
-
-    &.expanded {
-      width: 16rem;
-      transform: translate3d(0, 0, 0);
-    }
-    &.animated {
-      transition: all $aside-animation-time;
-    }
+    width: 100%;
+    position: fixed;
+    transition: height $aside-animation-time;
+    transform: translate3d(0, 0, 0);
+    height: 50%;
+    z-index: 10;
   }
   .profile {
     width: 100%;
     max-width: 100%;
     height: 100%;
-    overflow: hidden;
+    margin-top: 1rem;
 
     &.contact {
       margin-top: 1rem;
@@ -84,9 +79,6 @@
         font-size: 1.5rem;
       }
     }
-    > p {
-      display: none;
-    }
     .divider {
       display: none;
     }
@@ -95,10 +87,6 @@
     margin: 0;
     border-radius: 0;
     padding: .625rem 1.25rem;
-
-    &:hover {
-      background-color: darken($mobile-primary, 5%);
-    }
   }
   #avatar-link {
     display: inline-block;
@@ -111,18 +99,33 @@
       margin: 0;
     }
     &.left {
+      display:none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      padding: 3rem 0 !important;
+      background-color: $mobile-primary;
+      height: 100%;
+      margin: 0;
+      z-index: 20;
+
       .links.item {
         width: 100%;
       }
     }
   }
-  main {
+  .main {
     left: 0;
     transition: all $aside-animation-time;
     transform: translate3d(0, 0, 0);
+    position: relative;
+    z-index: 15;
+    background: #fff;
+    margin-top: 40%;
 
-    &.expanded {
-      transform: translate3d(14rem, 0, 0);
+    > .content {
+      padding: 1rem;
     }
   }
 }
@@ -142,13 +145,22 @@
         font-size: 1rem;
       }
     }
+
+    > p {
+      max-height: 4.6rem;
+      overflow: hidden;
+    }
   }
   .btn {
     display: block;
     margin-bottom: .4em;
   }
-  main {
+  .cover {
+    height: 70%;
+  }
+  .main {
     padding: 1rem 0;
+    margin-top: 100%;
   }
   .mayday {
     width: auto;
@@ -156,13 +168,6 @@
     > h1 {
       font-size: 20px;
       line-height: 25px;
-    }
-  }
-  #menu-button {
-    left: 13.5rem;
-
-    &.expanded {
-      left: 1rem;
     }
   }
   #panic-button {
