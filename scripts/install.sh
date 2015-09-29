@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [ -d "uno-zen" ]; then
-  echo "uno-zen already installed. Perhaps you should run the update script"
+  echo "uno-zen already installed."
+  echo "Perhaps you want to run the update script: sh scripts/update.sh"
   exit
 fi
 
