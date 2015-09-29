@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -d "uno-zen" ]; then
+  echo "uno-zen already installed."
+  echo "Perhaps you want to run the update script: sh scripts/update.sh"
+  exit
+fi
 
 git clone https://github.com/Kikobeats/uno-zen.git && cd uno-zen
 

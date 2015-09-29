@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. "$PWD"/scripts/utils.sh
+."$PWD"/scripts/utils.sh
 
 welcome
 
