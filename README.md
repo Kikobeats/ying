@@ -52,6 +52,8 @@ Enter the theme folder (`content/themes`) of your Ghost installation and paste t
 $ curl -sSL http://git.io/vcIHr | sh
 ```
 
+Restart your ghost.
+
 **NOTE:** This theme needs jQuery to works fine, but jQuery library is not provided by the theme. Instead, you need to inject from the `Blog Footer` in the `Code injection` of your Ghost installation:
 
 ```html
