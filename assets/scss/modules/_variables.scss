@@ -15,8 +15,9 @@ $red                   : #e74c3c;
 $purple                : #493252;
 $slate                 : #3d4260;
 $wet-asphalt           : #34495e;
+$curious-blue          : #3498DB;
 
-$primary-color         : lighten($wet-asphalt, 5%);
+$primary-color         : lighten($curious-blue, 5%);
 $secondary-color       : $gray-dark;
 
 $cover-secondary       : rgba(#5f2c82, .1);
