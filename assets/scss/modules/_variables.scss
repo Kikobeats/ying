@@ -14,8 +14,9 @@ $cyan                  : #006064;
 $red                   : #e74c3c;
 $purple                : #493252;
 $slate                 : #3d4260;
+$wet-asphalt           : #34495e;
 
-$primary-color         : lighten($red, 5%);
+$primary-color         : lighten($wet-asphalt, 5%);
 $secondary-color       : $gray-dark;
 
 $cover-secondary       : rgba(#5f2c82, .1);
