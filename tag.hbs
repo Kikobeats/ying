@@ -1,6 +1,9 @@
 {{!< default}}
 
-<h1 style="text-align: center;">Tag: {{tag.name}}.</h1>
+{{#tag}}
+<h1 style="text-align: center;">Tag: {{name}}.</h1>
+{{#if image}}<img id="post-image" src="{{image}}" alt="{{{title}}}">{{/if}}
+{{/tag}}
 <ol id="posts-list">
   {{#foreach posts}}
   <li>
