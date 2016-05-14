@@ -27,17 +27,39 @@ window.Uno = Uno =
 
   loadingBar: (action) -> $('.pace')[action]()
 
+  convertUTCDateToLocalDate: (date) ->
+    newDate = new Date(date)
+    newDate.setMinutes(newDate.getMinutes() - newDate.getTimezoneOffset())
+    newDate
+
   timeAgo: (selector) ->
+    self = this
     $(selector).each ->
-      postDate = $(this).html()
-      postDateInDays = Math.floor((Date.now() - new Date(postDate)) / 86400000)
+      postDate = $(this).attr('datetime')
+
+      monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+      ]
+
+      localPostDate = self.convertUTCDateToLocalDate(postDate)
+
+      postDateInDays = Math.floor((self.convertUTCDateToLocalDate(Date.now()) - localPostDate) / 86400000)
 
       if postDateInDays is 0 then postDateInDays = 'today'
       else if postDateInDays is 1 then postDateInDays = 'yesterday'
       else postDateInDays = "#{postDateInDays} days ago"
 
+
+      localFormatted =
+        day: localPostDate.getDate()
+        month:localPostDate.getMonth()
+        year: localPostDate.getFullYear()
+
       $(this).html(postDateInDays)
-      $(this).mouseover -> $(this).html postDate
+      $(this).mouseover -> $(this).html localFormatted.day + " " + monthNames[localFormatted.month] + " " + localFormatted.year
       $(this).mouseout -> $(this).html postDateInDays
 
   device: ->
