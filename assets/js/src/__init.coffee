@@ -1,7 +1,7 @@
 'use strict'
 
 window.Uno = Uno =
-  version: '2.7.8'
+  version: '2.8.1'
   app: do -> document.body
   is: (k, v=!'undefined') -> this.app.dataset[k] is v
 
@@ -10,6 +10,16 @@ window.Uno = Uno =
     # https://github.com/TryGhost/Ghost/wiki/Context-aware-Filters-and-Helpers
     className = document.body.className.split(' ')[0].split('-')[0]
     if className is '' then 'error' else className
+
+  linkify: (selector) ->    
+    $(selector).each ->   
+      el = $(this)    
+      text = el.text()    
+      id = el.attr 'id'   
+    
+      el.html('')   
+      el.addClass('deep-link')    
+      el.append("<a href=##{id} class=\"title-link\">#{text}</a>")
 
   search:
     container: -> $('#results')
