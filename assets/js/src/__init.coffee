@@ -1,7 +1,7 @@
 'use strict'
 
 window.Uno = Uno =
-  version: '2.8.1'
+  version: '2.7.8'
   app: do -> document.body
   is: (k, v=!'undefined') -> this.app.dataset[k] is v
 
@@ -11,33 +11,59 @@ window.Uno = Uno =
     className = document.body.className.split(' ')[0].split('-')[0]
     if className is '' then 'error' else className
 
-  linkify: (selector) ->
-    $(selector).each ->
-      el = $(this)
-      text = el.text()
-      id = el.attr 'id'
-
-      el.html('')
-      el.addClass('deep-link')
-      el.append("<a href=##{id} class=\"title-link\">#{text}</a>")
-
   search:
     container: -> $('#results')
     form: (action) -> $('#search-container')[action]()
 
   loadingBar: (action) -> $('.pace')[action]()
 
+  convertUTCDateToLocalDate: (date, timezone) ->
+    convertDate = (date) ->
+      date.setMinutes(newDate.getMinutes() - newDate.getTimezoneOffset())
+      date
+      
+    if(timezone)
+      newDate = new Date(date)
+      if(timezone == newDate.getTimezoneOffset())
+        newDate
+      else
+        convertDate(newDate)
+    else
+      newDate = new Date(date)
+      convertDate(newDate)
+
   timeAgo: (selector) ->
+    self = this;
     $(selector).each ->
-      postDate = $(this).html()
-      postDateInDays = Math.floor((Date.now() - new Date(postDate)) / 86400000)
+      postDate = $(this).attr('datetime')
+      postTimezone = parseInt($(this).data('timezone').replace(/0/g, "")); #get the timezone and strip 0s
+      postTimezone = -postTimezone * 60; #flip the sign and convert to minutes
+
+      monthNames = [
+        "January", "February", "March",
+        "April", "May", "June", "July",
+        "August", "September", "October",
+        "November", "December"
+      ];
+
+      localPostDate = self.convertUTCDateToLocalDate(postDate, postTimezone)
+
+      postDateInDays = Math.floor((self.convertUTCDateToLocalDate(Date.now()) - localPostDate) / 86400000)
+
+
 
       if postDateInDays is 0 then postDateInDays = 'today'
       else if postDateInDays is 1 then postDateInDays = 'yesterday'
       else postDateInDays = "#{postDateInDays} days ago"
 
+
+      localFormatted =
+        day: localPostDate.getDate()
+        month:localPostDate.getMonth()
+        year: localPostDate.getFullYear()
+
       $(this).html(postDateInDays)
-      $(this).mouseover -> $(this).html postDate
+      $(this).mouseover -> $(this).html localFormatted.day + " " + monthNames[localFormatted.month] + " " + localFormatted.year
       $(this).mouseout -> $(this).html postDateInDays
 
   device: ->

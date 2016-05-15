@@ -6,9 +6,13 @@
   > li {
     margin-left: 1rem;
     margin-bottom: 1.25rem;
+    position: relative;
+    padding-right: 85px;
 
     > time {
-      float: right;
+      right: 0;
+      top: 0;
+      position: absolute;
       text-transform: uppercase;
       color: #777;
       font-size: 10px;
@@ -16,6 +20,7 @@
     }
 
     > a {
+      padding-right: 85px;
       @extend %dotted-link;
     }
 
