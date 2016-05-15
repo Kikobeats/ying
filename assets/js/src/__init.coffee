@@ -1,7 +1,7 @@
 'use strict'
 
 window.Uno = Uno =
-  version: '2.8.1'
+  version: '2.7.8'
   app: do -> document.body
   is: (k, v=!'undefined') -> this.app.dataset[k] is v
 
@@ -11,40 +11,37 @@ window.Uno = Uno =
     className = document.body.className.split(' ')[0].split('-')[0]
     if className is '' then 'error' else className
 
-  linkify: (selector) ->
-    $(selector).each ->
-      el = $(this)
-      text = el.text()
-      id = el.attr 'id'
-
-      el.html('')
-      el.addClass('deep-link')
-      el.append("<a href=##{id} class=\"title-link\">#{text}</a>")
-
   search:
     container: -> $('#results')
     form: (action) -> $('#search-container')[action]()
 
   loadingBar: (action) -> $('.pace')[action]()
 
-  convertUTCDateToLocalDate: (date) ->
-    newDate = new Date(date)
-    newDate.setMinutes(newDate.getMinutes() - newDate.getTimezoneOffset())
-    newDate
+  convertUTCDateToLocalDate: (date, timezone) ->
+    if(timezone)
+      newDate = new Date(date)
+      if(timezone == newDate.getTimezoneOffset())
+        newDate
+    else
+      newDate = new Date(date)
+      newDate.setMinutes(newDate.getMinutes() - newDate.getTimezoneOffset())
+      newDate
 
   timeAgo: (selector) ->
-    self = this
+    self = this;
     $(selector).each ->
       postDate = $(this).attr('datetime')
+      postTimezone = parseInt($(this).data('timezone').replace(/0/g, "")); #get the timezone and strip 0s
+      postTimezone = -postTimezone * 60; #flip the sign and convert to minutes
 
       monthNames = [
         "January", "February", "March",
         "April", "May", "June", "July",
         "August", "September", "October",
         "November", "December"
-      ]
+      ];
 
-      localPostDate = self.convertUTCDateToLocalDate(postDate)
+      localPostDate = self.convertUTCDateToLocalDate(postDate, postTimezone)
 
       postDateInDays = Math.floor((self.convertUTCDateToLocalDate(Date.now()) - localPostDate) / 86400000)
 
