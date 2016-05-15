@@ -18,14 +18,19 @@ window.Uno = Uno =
   loadingBar: (action) -> $('.pace')[action]()
 
   convertUTCDateToLocalDate: (date, timezone) ->
+    convertDate = (date) ->
+      date.setMinutes(newDate.getMinutes() - newDate.getTimezoneOffset())
+      date
+      
     if(timezone)
       newDate = new Date(date)
       if(timezone == newDate.getTimezoneOffset())
         newDate
+      else
+        convertDate(newDate)
     else
       newDate = new Date(date)
-      newDate.setMinutes(newDate.getMinutes() - newDate.getTimezoneOffset())
-      newDate
+      convertDate(newDate)
 
   timeAgo: (selector) ->
     self = this;
@@ -44,6 +49,8 @@ window.Uno = Uno =
       localPostDate = self.convertUTCDateToLocalDate(postDate, postTimezone)
 
       postDateInDays = Math.floor((self.convertUTCDateToLocalDate(Date.now()) - localPostDate) / 86400000)
+
+
 
       if postDateInDays is 0 then postDateInDays = 'today'
       else if postDateInDays is 1 then postDateInDays = 'yesterday'
