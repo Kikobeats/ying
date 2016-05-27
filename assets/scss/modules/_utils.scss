@@ -16,22 +16,22 @@
   }
 }
 
-@mixin background-filter {
+%background-filter {
   background: linear-gradient(150deg, $cover-secondary 30%, $cover-primary 70%) 0 0 / cover fixed;
 }
 
-@mixin center-absolute {
+%center-absolute {
   display: flex;
 
   align-items: center;
   justify-content: center;
 }
 
-@mixin font-shadow {
+%font-shadow {
   text-shadow: 0 1px 1px rgba(000, 000, 000, .4);
 }
 
-@mixin btn-cover {
+%btn-cover {
   position: relative;
 
   display: block;
@@ -52,23 +52,22 @@
   }
 }
 
-@mixin btn-cover-with-border {
+%btn-cover-with-border {
+  @extend %btn-cover;
   border: 1px solid $gray-lightest;
-
-  @extend btn-cover;
 }
 
 @mixin placeholder {
   ::-webkit-input-placeholder {
-    @content
+    @content;
   }
   :-moz-placeholder {
-    @content
+    @content;
   }
   ::-moz-placeholder {
-    @content
+    @content;
   }
   :-ms-input-placeholder {
-    @content
+    @content;
   }
 }

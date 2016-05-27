@@ -5,10 +5,10 @@ body[data-page="error"] {
   font-weight: normal;
   line-height: 25px;
   text-align: center;
-  @include background-filter;
 
+  @extend %background-filter;
   > article {
-    @include center-absolute;
+    @extend %center-absolute;
   }
 }
 

@@ -15,7 +15,6 @@
 <a target="blank" href="http://dan.maharry.me.uk"><img src="http://i.imgur.com/gAeS9jQ.jpg" /></a>
 <a target="blank" href="http://maptime.io/milan/"><img src="http://i.imgur.com/hd9tpzq.jpg" /></a>
 <a target="blank" href="http://xlbd.me"><img src="http://i.imgur.com/wiqVB9R.jpg" /></a>
-<a target="blank" href="http://blog.sujithvishwajith.com"><img src="http://i.imgur.com/eol02YK.jpg" /></a>
 <a target="blank" href="https://carlbernardo.github.io"><img src="http://i.imgur.com/dihIo6Q.jpg" /></a>
 <a target="blank" href="http://olddonkey.com"><img src="http://i.imgur.com/wa4kwnZ.jpg" /></a>
 <a target="blank" href="http://www.mohammedovich.com/"><img src="http://i.imgur.com/oiKFBG2.jpg" /></a>
@@ -23,6 +22,7 @@
 <a target="blank" href="http://yangshuan.cn"><img src="http://i.imgur.com/6ptrCIp.jpg" /></a>
 <a target="blank" href="http://4ts.io"><img src="http://i.imgur.com/wm9Lr5o.png" /></a>
 <a target="blank" href="http://binaryfever.com"><img src="http://i.imgur.com/SHzfMEE.png" /></a>
+<a target="blank" href="http://joshmiramant.com"><img src="http://i.imgur.com/JnDzgLq.gif"></a>
 </br>
 </br>
 </div>

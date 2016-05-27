@@ -1,3 +1,20 @@
+<a name="2.8.2"></a>
+## 2.8.2 (2016-05-23)
+
+* Adjust node version ([f74f27e](https://github.com/kikobeats/uno-zen/commit/f74f27e))
+* Adjust search icon ([06dbc32](https://github.com/kikobeats/uno-zen/commit/06dbc32))
+* Quote handlebars helpers ([d8a71dc](https://github.com/kikobeats/uno-zen/commit/d8a71dc))
+* Remove unnecessary dep ([b6818a8](https://github.com/kikobeats/uno-zen/commit/b6818a8))
+* Remove unnecessary escape ([1d854c8](https://github.com/kikobeats/uno-zen/commit/1d854c8))
+* Update README ([3ceeab0](https://github.com/kikobeats/uno-zen/commit/3ceeab0))
+* Update SHOWCASE.md ([849b60e](https://github.com/kikobeats/uno-zen/commit/849b60e))
+* Update SHOWCASE.md ([2192084](https://github.com/kikobeats/uno-zen/commit/2192084))
+* Upgrade Ghost version ([abee6a2](https://github.com/kikobeats/uno-zen/commit/abee6a2))
+* Use HTTPS as possible ([a0d7c07](https://github.com/kikobeats/uno-zen/commit/a0d7c07))
+* Use SASS @mixin & @extend correctly ([1da86e5](https://github.com/kikobeats/uno-zen/commit/1da86e5))
+
+
+
 <a name="2.8.1"></a>
 ## 2.8.1 (2016-05-08)
 

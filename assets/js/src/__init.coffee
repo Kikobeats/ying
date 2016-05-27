@@ -1,7 +1,7 @@
 'use strict'
 
 window.Uno = Uno =
-  version: '2.8.1'
+  version: '2.8.2'
   app: do -> document.body
   is: (k, v=!'undefined') -> this.app.dataset[k] is v
 
@@ -91,4 +91,3 @@ $('#profile-title').text window.profile_title if window.profile_title
 $('#profile-resume').text window.profile_resume if window.profile_resume
 $('#posts-headline').text window.posts_headline if window.posts_headline
 window.open_button = window.open_button or '.nav-posts > a'
-

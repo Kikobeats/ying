@@ -2,7 +2,7 @@
 
 ![Last version](https://img.shields.io/github/tag/Kikobeats/uno-zen.svg?style=flat-square)
 [![Build Status](http://img.shields.io/travis/Kikobeats/uno-zen/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/uno-zen)
-![Ghost version](https://img.shields.io/badge/Ghost-0.7.x-brightgreen.svg?style=flat-square)
+![Ghost version](https://img.shields.io/badge/Ghost-0.8.x-brightgreen.svg?style=flat-square)
 ![Node version](https://img.shields.io/node/v/uno-zen.svg?style=flat-square)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/kikobeats)
 
@@ -59,7 +59,7 @@ $ curl -sSL http://git.io/vcIHr | sh
 
 ### Alternative installation (to enable deployment to remote server):
 
-Run the above command inside a temporary folder.  
+Run the above command inside a temporary folder.
 
 Delete the `.git` folder inside the `uno-zen` folder.
 
