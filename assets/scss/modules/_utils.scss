@@ -53,7 +53,7 @@
 }
 
 %btn-cover-with-border {
-  @extend %btn-cover;
+  @include %btn-cover;
   border: 1px solid $gray-lightest;
 }
 
