@@ -22,6 +22,8 @@
 <a target="blank" href="http://4ts.io"><img src="http://i.imgur.com/wm9Lr5o.png" /></a>
 <a target="blank" href="http://binaryfever.com"><img src="http://i.imgur.com/SHzfMEE.png" /></a>
 <a target="blank" href="http://joshmiramant.com"><img src="http://i.imgur.com/JnDzgLq.gif"></a>
+<a target="blank" href="https://blackguycoding.co"><img src="http://imgur.com/C5ES7cC"></a>
+
 </br>
 </br>
 </div>
