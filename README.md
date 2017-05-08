@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Kikobeats/uno-zen.png?label=ready&title=Ready)](https://waffle.io/Kikobeats/uno-zen)
 # Uno Zen for Ghost
 
 ![Last version](https://img.shields.io/github/tag/Kikobeats/uno-zen.svg?style=flat-square)
