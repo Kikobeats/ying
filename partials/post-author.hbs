@@ -1,3 +1,7 @@
 <span class="post author">
+{{#if author.profile_image}}
+  <img src="{{author.profile_image}}" class="rounded" alt="profile image for {{author.name}}"/> by {{author.name}}
+{{else}}
   <img src="{{author.image}}" class="rounded" alt="profile image for {{author.name}}"/> by {{author.name}}
+{{/if}}
 </span>
